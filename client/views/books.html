@@ -19,7 +19,7 @@
                     <label for="Genre">Genre</label>
                     <select id="Genre" class="form-control" ng-model="genre" ng-init="getGenres()">
                         <option value="" selected>- None -</option>
-                        <option ng-repeat="genre in genres">{{ genre.name }}</option>
+                        <option ng-repeat="genre in genres | orderBy:'name'">{{ genre.name }}</option>
                     </select>
                 </div>
 

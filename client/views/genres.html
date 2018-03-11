@@ -43,7 +43,7 @@
             <div class="card-block">
                 <div class="row">
                     <div class="col-md-12" ng-init="getGenres()">
-                        <div class="form-group" ng-repeat="genre in genres">
+                        <div class="form-group" ng-repeat="genre in genres | orderBy:'name'">
                             <button ng-click="removeGenre(genre._id)" class="btn btn-outline-danger btn-sm">Delete</button>
                             {{ genre.name }}
                         </div>
