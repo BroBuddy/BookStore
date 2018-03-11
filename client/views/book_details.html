@@ -1,39 +1,58 @@
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">BookStore</a></li>
+    <li class="breadcrumb-item active">Book details</li>
+</ol>
+      
 <div class="row" ng-init="getBook()">
     <div class="col-md-3">
-        <div class="card">
-            <a href="{{ book.buy_url }}" target="_blank">
-                <img class="card-img-top" ng-src="{{ book.image_url }}" ng-alt="{{ book.title }}" />
-            </a>
-        </div>
-    </div>
-
-    <div class="col-md-9">
-        <div class="card">
+        <div class="card">   
             <div class="card-header">
                 <strong>{{ book.title }}</strong>
             </div>
-            
+
             <div class="card-block">
-                <p class="card-text">{{ book.description }}</p>
-            </div>
+                <a href="{{ book.buy_url }}" target="_blank">
+                    <img class="card-img-top" ng-src="{{ book.image_url }}" ng-alt="{{ book.title }}" />
+                </a>
 
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><strong>Genre:</strong> &nbsp; {{ book.genre }}</li>
-                <li class="list-group-item"><strong>Author:</strong> &nbsp; {{ book.author }}</li>
-                <li class="list-group-item"><strong>Publisher:</strong> &nbsp; {{ book.publisher }}</li>
-                <li class="list-group-item"><strong>Price:</strong> &nbsp; ${{ book.price }}</li>
-            </ul>
-
-            <div class="card-footer">
-                <div class="btn-toolbar justify-content-between">
-                    <a href="#/books" class="btn btn-outline-secondary">Back</a>
-                    <a href="#!/books/edit/{{ book._id }}" class="btn btn-outline-success">Edit</a>
-                    <button data-toggle="modal" data-target="#myModal" class="btn btn-outline-danger">Delete</button>
-                    <a href="{{ book.buy_url }}" target="_blank" class="btn btn-outline-primary">Buy</a>
-                </div>
+                <p>by {{ book.author }}</p>
             </div>
         </div>
     </div>
+
+    <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Book details</strong>
+                </div>
+                
+                <div class="card-block">
+                    <p class="card-text">{{ book.description }}</p>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Genre:</strong> &nbsp; {{ book.genre }}</li>
+                    <li class="list-group-item"><strong>Publisher:</strong> &nbsp; {{ book.publisher }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">    
+                <div class="card-header">
+                    <strong>Options</strong>
+                </div>
+                
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#!/books/edit/{{ book._id }}" class="btn btn-outline-success btn-block">Edit</a></li>
+                    <li class="list-group-item"><button data-toggle="modal" data-target="#myModal" class="btn btn-outline-danger btn-block">Delete</button></li>
+                    <li class="list-group-item">
+                        <p><strong>Price:</strong> &nbsp; ${{ book.price }}</p>
+                        <a href="{{ book.buy_url }}" target="_blank" class="btn btn-outline-primary btn-block">Buy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 </div>
 
 <div class="modal fade" id="myModal">
