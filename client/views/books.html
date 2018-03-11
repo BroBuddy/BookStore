@@ -1,7 +1,7 @@
 <div class="row" ng-init="getBooks()">
     <div class="col-md-3" ng-repeat="book in books">
         <div class="card">
-            <a href="#!/books/details/{{ book._id }}">
+            <a href="#!/books/details/{{ book._id }}" ng-title="{{ book.title }}">
                 <img class="card-img-top" ng-src="{{ book.image_url }}" ng-alt="{{ book.title }}" />
             </a>
             

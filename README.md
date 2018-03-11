@@ -11,4 +11,5 @@ A little angularJS web application with a smooth nodeJS backend.
 - jquery
 - mongodb
 - mongoose
+- nodemon
 - nodeJS
