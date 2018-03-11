@@ -1,0 +1,87 @@
+<div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Edit Book</strong>
+                </div>
+
+                <div class="card-body">
+                    <form ng-submit="updateBook()" ng-init="getBook()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Title">Title</label>
+                                    <input type="text" class="form-control" id="Title" placeholder="Title" ng-model="book.title" required />
+                                </div>
+                            </div>
+    
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Genre">Genre</label>
+                                    <select id="Genre" class="form-control" ng-model="book.genre" ng-init="getGenres()" required>
+                                        <option ng-repeat="genre in genres">{{ genre.name }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Author">Author</label>
+                                    <input type="text" class="form-control" id="Author" placeholder="Author" ng-model="book.author" required />
+                                </div>
+                            </div>
+    
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Publisher">Publisher</label>
+                                    <input type="text" class="form-control" id="Publisher" placeholder="Publisher" ng-model="book.publisher" required />
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Image">Image URL</label>
+                                    <input type="text" class="form-control" id="Image" placeholder="Image URL" ng-model="book.image_url" required />
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Buy">Buy URL</label>
+                                    <input type="text" class="form-control" id="Buy" placeholder="Buy URL" ng-model="book.buy_url" required />
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Description">Description</label>
+                                    <textarea class="form-control" id="Description" rows="6" ng-model="book.description" required></textarea>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Title">Price</label>
+                                    <input type="text" class="form-control" id="Price" placeholder="Price" ng-model="book.price" required />
+                                    
+                                    <hr />
+
+                                    <div class="btn-toolbar justify-content-between">
+                                        <a href="#/books" class="btn btn-outline-secondary">Back</a>
+                                        <button type="submit" class="btn btn-outline-primary">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

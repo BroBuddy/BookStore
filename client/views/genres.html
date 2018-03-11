@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <strong>Add Genre</strong>
+            </div>
+
+            <div class="card-body">
+                <form ng-submit="addGenre()">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="Name">Name</label>
+                                <input type="text" class="form-control" id="Name" placeholder="Name" ng-model="genre.name" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="btn-toolbar justify-content-between">
+                                <a href="#/books" class="btn btn-outline-secondary">Back</a>
+                                <button type="submit" class="btn btn-outline-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card card-outline-success mb-3 text-center">
+            <div class="card-header">
+                <strong>Delete Genre</strong>
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12" ng-init="getGenres()">
+                        <div class="form-group" ng-repeat="genre in genres">
+                            <button ng-click="removeGenre(genre._id)" class="btn btn-outline-danger btn-sm">Delete</button>
+                            {{ genre.name }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

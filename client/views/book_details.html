@@ -1,0 +1,34 @@
+<div class="row" ng-init="getBook()">
+    <div class="col-md-3">
+        <div class="card">
+            <img class="card-img-top" ng-src="{{ book.image_url }}" ng-alt="{{ book.title }}" />
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div class="card">
+            <div class="card-header">
+                <strong>{{ book.title }}</strong>
+            </div>
+            
+            <div class="card-body">
+                <p class="card-text">{{ book.description }}</p>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Genre:</strong> {{ book.genre }}</li>
+                <li class="list-group-item"><strong>Author:</strong> {{ book.author }}</li>
+                <li class="list-group-item"><strong>Publisher:</strong> {{ book.publisher }}</li>
+            </ul>
+
+            <div class="card-footer">
+                <div class="btn-toolbar justify-content-between">
+                    <a href="#/books" class="btn btn-outline-secondary">Back</a>
+                    <a href="#!/books/edit/{{ book._id }}" class="btn btn-outline-success">Edit</a>
+                    <button ng-click="removeBook(book._id)" class="btn btn-outline-danger">Delete</button>
+                    <a href="{{ book.buy_url }}" target="_blank" class="btn btn-outline-primary">Buy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
