@@ -43,6 +43,9 @@ myApp.controller('BooksController', ['$scope', '$http', '$location', '$routePara
     $scope.removeBook = function (id) {
         $http.delete('/api/books/' + id)
         .then(function(response) {
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+
             window.location.href = '#/books';
         });
     }

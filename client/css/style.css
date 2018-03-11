@@ -10,3 +10,7 @@ textarea {
     padding: 15px;
     max-height: 350px;
 }
+
+button:hover {
+    cursor: pointer;
+}
