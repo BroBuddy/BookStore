@@ -6,23 +6,25 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/solar/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <nav class="navbar navbar-toggleable-md">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="/">BookStore</a>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#!/books/add">Add Book</a></li>
-        <li class="nav-item"><a class="nav-link" href="#!/genres">Genres</a></li>
-      </ul>
+  <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <div class="container">
+      <a href="/" class="navbar-brand">BookStore</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#!/books/add">Add Book</a></li>
+            <li class="nav-item"><a class="nav-link" href="#!/genres">Genres</a></li>
+        </ul>
+      </div>
     </div>
-  </nav>
+  </div>
 
   <div class="container">
     <div ng-view></div>

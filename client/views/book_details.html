@@ -45,7 +45,7 @@
                 
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><a href="#!/books/edit/{{ book._id }}" class="btn btn-outline-success btn-block">Edit</a></li>
-                    <li class="list-group-item"><button data-toggle="modal" data-target="#myModal" class="btn btn-outline-danger btn-block">Delete</button></li>
+                    <li class="list-group-item"><button data-toggle="modal" data-target="#myModal" class="btn btn-outline-warning btn-block">Delete</button></li>
                     <li class="list-group-item">
                         <p><strong>Price:</strong> &nbsp; ${{ book.price }}</p>
                         <a href="{{ book.buy_url }}" target="_blank" class="btn btn-outline-primary btn-block">Buy</a>
@@ -68,8 +68,8 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger" ng-click="removeBook(book._id)">Delete</button>
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-warning" ng-click="removeBook(book._id)">Delete</button>
             </div>
         </div>
     </div>
