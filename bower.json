@@ -11,13 +11,12 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    ".idea",
     "test",
     "tests"
   ],
   "dependencies": {
     "angular": "^1.6.9",
-    "jquery": "^3.3.1",
-    "bootstrap": "^4.0.0",
     "angular-route": "^1.6.9"
   }
 }
