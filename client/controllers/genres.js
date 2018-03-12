@@ -6,28 +6,28 @@ myApp.controller('GenresController', ['$scope', '$http', '$location', '$routePar
         .then(function(response) {
             $scope.genres = response.data;
         });
-    }
+    };
 
     $scope.addGenre = function () {
         $http.post('/api/genres/', $scope.genre)
-        .then(function(response) {
+        .then(function() {
             $scope.getGenres();
         });
-    }
+    };
 
     $scope.updateGenre = function () {
         var id = $routeParams.id;
 
         $http.put('/api/genres/' + id, $scope.genre)
-        .then(function(response) {
+        .then(function() {
             $scope.getGenres();
         });
-    }
+    };
 
     $scope.removeGenre = function (id) {
         $http.delete('/api/genres/' + id)
-        .then(function(response) {
+        .then(function() {
             $scope.getGenres();
         });
-    }
+    };
 }]);

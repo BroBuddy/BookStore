@@ -6,14 +6,14 @@ myApp.controller('BooksController', ['$scope', '$http', '$location', '$routePara
         .then(function(response) {
             $scope.genres = response.data;
         });
-    }
+    };
     
     $scope.getBooks = function () {
         $http.get('/api/books')
         .then(function(response) {
             $scope.books = response.data;
         });
-    }
+    };
 
     $scope.getBook = function () {
         var id = $routeParams.id;
@@ -22,31 +22,31 @@ myApp.controller('BooksController', ['$scope', '$http', '$location', '$routePara
         .then(function(response) {
             $scope.book = response.data;
         });
-    }
+    };
 
     $scope.addBook = function () {
         $http.post('/api/books/', $scope.book)
-        .then(function(response) {
+        .then(function() {
             $scope.created = true;
         });
-    }
+    };
 
     $scope.updateBook = function () {
         var id = $routeParams.id;
 
         $http.put('/api/books/' + id, $scope.book)
-        .then(function(response) {
+        .then(function() {
             window.location.href = '#/books';
         });
-    }
+    };
 
     $scope.removeBook = function (id) {
         $http.delete('/api/books/' + id)
-        .then(function(response) {
+        .then(function() {
             $('body').removeClass('modal-open');
             $('.modal-backdrop').remove();
 
             window.location.href = '#/books';
         });
-    }
+    };
 }]);

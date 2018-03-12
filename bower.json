@@ -1,0 +1,22 @@
+{
+  "name": "bookstore",
+  "description": "bookstore nodeJS API",
+  "main": "app.js",
+  "authors": [
+    "BroBuddy"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/BroBuddy/BookStore",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    ".idea",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-route": "^1.6.9"
+  }
+}

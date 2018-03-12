@@ -17,12 +17,12 @@ var Genre = module.exports = mongoose.model('Genre', genreSchema);
 // Get genres
 module.exports.getGenres = function(callback, limit) {
     Genre.find(callback).sort({ 'name': 'asc' }).limit(limit);
-}
+};
 
 // Add genre
 module.exports.addGenre = function(genre, callback) {
     Genre.create(genre, callback);
-}
+};
 
 // Update genre
 module.exports.updateGenre = function(id, genre, options, callback) {
@@ -34,7 +34,7 @@ module.exports.updateGenre = function(id, genre, options, callback) {
     };
 
     Genre.findOneAndUpdate(query, update, options, callback);
-}
+};
 
 // Delete genre
 module.exports.removeGenre = function(id, callback) {
@@ -43,4 +43,4 @@ module.exports.removeGenre = function(id, callback) {
     };
 
     Genre.remove(query, callback);
-}
+};

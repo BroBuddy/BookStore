@@ -41,17 +41,17 @@ var Book = module.exports = mongoose.model('Book', bookSchema);
 // Get books
 module.exports.getBooks = function(callback, limit) {
     Book.find(callback).limit(limit);
-}
+};
 
 // Get book
 module.exports.getBookById = function(id, callback) {
     Book.findById(id, callback);
-}
+};
 
 // Add book
 module.exports.addBook = function(book, callback) {
     Book.create(book, callback);
-}
+};
 
 // Update book
 module.exports.updateBook = function(id, book, options, callback) {
@@ -70,7 +70,7 @@ module.exports.updateBook = function(id, book, options, callback) {
     };
 
     Book.findOneAndUpdate(query, update, options, callback);
-}
+};
 
 // Delete book
 module.exports.removeBook = function(id, callback) {
@@ -79,4 +79,4 @@ module.exports.removeBook = function(id, callback) {
     };
 
     Book.remove(query, callback);
-}
+};
