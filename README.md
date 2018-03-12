@@ -13,3 +13,10 @@ A little angularJS web application with a smooth nodeJS backend.
 - mongoose
 - nodemon
 - nodeJS
+
+## Installation
+- git clone [project]
+- npm install
+- bower install
+- run "node app" | "nodemon"
+- run "mongod" | "mongo"
