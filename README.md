@@ -31,3 +31,8 @@ A little angularJS web application with a smooth nodeJS backend.
 - [post] /api/books
 - [put] /api/books/:_id
 - [delete] /api/books/:_id
+- [get] /api/authors
+- [get] /api/authors/:_id
+- [post] /api/authors
+- [put] /api/authors/:_id
+- [delete] /api/authors/:_id
