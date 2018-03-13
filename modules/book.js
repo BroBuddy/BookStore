@@ -30,6 +30,10 @@ var bookSchema = mongoose.Schema({
         type: String,
         default: '0.00'
     },
+    rating: {
+        type: Number,
+        default: 0
+    },
     create_date: {
         type: Date,
         default: Date.now
@@ -66,7 +70,8 @@ module.exports.updateBook = function(id, book, options, callback) {
         publisher: book.publisher,
         image_url: book.image_url,
         buy_url: book.buy_url,
-        price: book.price
+        price: book.price,
+        rating: book.rating
     };
 
     Book.findOneAndUpdate(query, update, options, callback);

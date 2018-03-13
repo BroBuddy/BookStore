@@ -1,32 +1,37 @@
 <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="#">BookStore</a></li>
-    <li class="breadcrumb-item">Book details</li>
-    <li class="breadcrumb-item active">Edit Book</li>
+    <li class="breadcrumb-item"><a href="#!/authors">Author</a></li>
+    <li class="breadcrumb-item active">Add Author</li>
 </ol>
 
 <div class="row">
     <div class="col-md-12">
+        <div class="bs-component">
+            <div class="alert alert-dismissible alert-primary" ng-if="created">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Well done!</strong> You successfully added a new author.
+            </div>
+        </div>
+
         <div class="card">
             <div class="card-header">
-                <strong>Edit Book</strong>
+                <strong>Add Author</strong>
             </div>
 
             <div class="card-block">
-                <form ng-submit="updateBook()" ng-init="getBook()">
+                <form ng-submit="addAuthor()">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="Title">Title</label>
-                                <input type="text" class="form-control" id="Title" placeholder="Title" ng-model="book.title" required />
+                                <label for="Name">Name</label>
+                                <input type="text" class="form-control" id="Name" placeholder="Name" ng-model="author.name" required />
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="Genre">Genre</label>
-                                <select id="Genre" class="form-control" ng-model="book.genre" ng-init="getGenres()" required>
-                                    <option ng-repeat="genre in genres | orderBy:'name'">{{ genre.name }}</option>
-                                </select>
+                                <label for="Hometown">Hometown</label>
+                                <input type="text" class="form-control" id="Hometown" placeholder="Hometown" ng-model="author.hometown" />
                             </div>
                         </div>
                     </div>
@@ -34,53 +39,53 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="Author">Author</label>
-                                <input type="text" class="form-control" id="Author" placeholder="Author" ng-model="book.author" required />
+                                <label for="Date">Date of birth</label>
+                                <input type="text" class="form-control" id="Date" placeholder="Date of birth" ng-model="author.date_of_birth" />
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="Publisher">Publisher</label>
-                                <input type="text" class="form-control" id="Publisher" placeholder="Publisher" ng-model="book.publisher" required />
+                                <label for="Place">Place of birth</label>
+                                <input type="text" class="form-control" id="Place" placeholder="Place of birth" ng-model="author.place_of_birth" />
                             </div>
                         </div>
                     </div>
-        
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="Image">Image URL</label>
-                                <input type="text" class="form-control" id="Image" placeholder="Image URL" ng-model="book.image_url" required />
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="Buy">Buy URL</label>
-                                <input type="text" class="form-control" id="Buy" placeholder="Buy URL" ng-model="book.buy_url" required />
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="Description">Description</label>
-                                <textarea class="form-control" id="Description" rows="6" ng-model="book.description" required></textarea>
+                                <input type="text" class="form-control" id="Image" placeholder="Image URL" ng-model="author.image_url" />
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="Title">Price</label>
-                                <input type="text" class="form-control" id="Price" placeholder="Price" ng-model="book.price" required />
+                                <label for="Web">Web URL</label>
+                                <input type="text" class="form-control" id="Web" placeholder="Web URL" ng-model="author.web_url" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Description">Description</label>
+                                <textarea class="form-control" id="Description" rows="6" ng-model="author.description"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Education">Education</label>
+                                <input type="text" class="form-control" id="Education" placeholder="Education" ng-model="author.education" />
                                 
                                 <hr />
 
                                 <div class="btn-toolbar justify-content-between">
                                     <a href="#/books" class="btn btn-outline-secondary">Back</a>
-                                    <button type="submit" class="btn btn-outline-primary">Update</button>
+                                    <button type="submit" class="btn btn-outline-primary">Add</button>
                                 </div>
                             </div>
                         </div>

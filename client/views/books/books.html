@@ -44,10 +44,20 @@
                 <div class="form-group">
                     <select class="form-control" ng-model="orderBy">
                         <option value="" selected>- None -</option>
-                        <option value="author">Author</option>
-                        <option value="price">Price</option>
-                        <option value="publisher">Publisher</option>
-                        <option value="title">Title</option>
+                        <optgroup label="Ascending">
+                            <option value="author">Author</option>
+                            <option value="price">Price</option>
+                            <option value="publisher">Publisher</option>
+                            <option value="rating">Rating</option>
+                            <option value="title">Title</option>
+                        </optgroup>
+                        <optgroup label="Descending">
+                            <option value="-author">Author</option>
+                            <option value="-price">Price</option>
+                            <option value="-publisher">Publisher</option>
+                            <option value="-rating">Rating</option>
+                            <option value="-title">Title</option>
+                        </optgroup>
                     </select>
                 </div>
             </div>
@@ -64,7 +74,20 @@
                     
                     <div class="card-block">
                         <h6 class="card-title">{{ book.title }}</h6>
-                        <p class="card-text">by {{ book.author }}</p>
+
+                        <p class="text-primary">
+                            <span ng-if="book.rating > 0">&#9733;</span>
+                            <span ng-if="book.rating > 1">&#9733;</span>
+                            <span ng-if="book.rating > 2">&#9733;</span>
+                            <span ng-if="book.rating > 3">&#9733;</span>
+                            <span ng-if="book.rating > 4">&#9733;</span>
+                            <span ng-if="book.rating < 5">&#9734;</span>
+                            <span ng-if="book.rating < 4">&#9734;</span>
+                            <span ng-if="book.rating < 3">&#9734;</span>
+                            <span ng-if="book.rating < 2">&#9734;</span>
+                            <span ng-if="book.rating < 1">&#9734;</span>
+                        </p>
+
                         <span class="badge badge-primary">${{ book.price }}</span>
                     </div>
                 </div>

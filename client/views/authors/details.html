@@ -1,0 +1,74 @@
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">BookStore</a></li>
+    <li class="breadcrumb-item active">Author details</li>
+</ol>
+        
+<div class="row" ng-init="getAuthor()">
+    <div class="col-md-3">
+        <div class="card">   
+            <div class="card-header">
+                <strong>{{ author.name }}</strong>
+            </div>
+
+            <div class="card-block">
+                <a href="{{ author.web_url }}" target="_blank">
+                    <img class="card-img-top" ng-src="{{ author.image_url }}" ng-alt="{{ author.name }}" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <strong>About the Author</strong>
+            </div>
+            
+            <div class="card-block">
+                <p class="card-text" ng-if="author.description">{{ author.description }}</p>
+                <p class="card-text" ng-if="!author.description">No description available.}</p>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" ng-show="author.hometown"><strong>Hometown:</strong> &nbsp; {{ author.hometown }}</li>
+                <li class="list-group-item" ng-show="author.date_of_birth"><strong>Date of birth:</strong> &nbsp; {{ author.date_of_birth }}</li>
+                <li class="list-group-item" ng-show="author.place_of_birth"><strong>Place of birth:</strong> &nbsp; {{ author.place_of_birth }}</li>
+                <li class="list-group-item" ng-show="author.education"><strong>Education:</strong> &nbsp; {{ author.education }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card">    
+            <div class="card-header">
+                <strong>Options</strong>
+            </div>
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#!/authors/edit/{{ author._id }}" class="btn btn-outline-success btn-block">Edit</a></li>
+                <li class="list-group-item"><button data-toggle="modal" data-target="#myModal" class="btn btn-outline-warning btn-block">Delete</button></li>
+                <li class="list-group-item" ng-show="author.web_url"><a href="{{ author.web_url }}" target="_blank" class="btn btn-outline-primary btn-block">Web</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Delete {{ author.name }}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                Do you really want to delete this?
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-warning" ng-click="removeAuthor(author._id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

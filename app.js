@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 
 Genre = require('./modules/genre');
 Book = require('./modules/book');
+Author = require('./modules/author');
 
 // Connect to mongoose
 mongoose.connect('mongodb://localhost/bookstore');
@@ -120,6 +121,64 @@ app.delete('/api/books/:_id', function (req, res) {
         }
 
         res.json(book);
+    });
+});
+
+// Author
+app.get('/api/authors', function (req, res) {
+    Author.getAuthors(function(err, authors) {
+        if (err) {
+            throw err;
+        }
+
+        res.json(authors);
+    });
+});
+
+app.get('/api/authors/:_id', function (req, res) {
+    Author.getAuthorById(req.params._id, function(err, author) {
+        if (err) {
+            throw err;
+        }
+
+        res.json(author);
+    });
+});
+
+app.post('/api/authors', function (req, res) {
+    var author = req.body;
+
+    Author.addAuthor(author, function(err, author) {
+        if (err) {
+            throw err;
+        }
+
+        res.json(author);
+    });
+});
+
+app.put('/api/authors/:_id', function (req, res) {
+    var id = req.params._id;
+    var author = req.body;
+
+    Author.updateAuthor(id, author, {}, function(err, author) {
+        if (err) {
+            throw err;
+        }
+
+        res.json(author);
+    });
+});
+
+app.delete('/api/authors/:_id', function (req, res) {
+    var id = req.params._id;
+
+    Author.removeAuthor(id, function(err, author) {
+        if (err) {
+            throw err;
+        }
+
+        res.json(author);
     });
 });
 
