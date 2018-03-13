@@ -9,6 +9,7 @@ A little angularJS web application with a smooth nodeJS backend.
 - express
 - git
 - jquery
+- jsonwebtoken
 - mongodb
 - mongoose
 - nodemon
