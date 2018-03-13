@@ -2,7 +2,7 @@
     <li class="breadcrumb-item active">BookStore</li>
 </ol>
 
-<div class="row">
+<div class="row" ng-init="getBooks()">
     <div class="col-md-3">
         <div class="card">
             <div class="card-header">
@@ -25,12 +25,18 @@
 
                 <div class="form-group">
                     <label for="Author">Author</label>
-                    <input type="text" class="form-control" id="Author" placeholder="Author" ng-model="author" />
+                    <select id="Author" class="form-control" ng-model="author" ng-init="getAuthors()">
+                        <option value="" selected>- None -</option>
+                        <option ng-repeat="author in authors | orderBy:'name'">{{ author.name }}</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label for="Publisher">Publisher</label>
-                    <input type="text" class="form-control" id="Publisher" placeholder="Publisher" ng-model="publisher" />
+                    <select id="Publisher" class="form-control" ng-model="publisher">
+                        <option value="" selected>- None -</option>
+                        <option ng-repeat="book in books | orderBy:'publisher' track by $index">{{ book.publisher }}</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -65,8 +71,9 @@
     </div>
 
     <div class="col-md-9">
-        <div class="row" ng-init="getBooks()">
-            <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="book in books | orderBy:orderBy | filter:{genre:genre} | filter:{author:author} | filter:{publisher:publisher} | filter:{title:title}">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3"
+            ng-repeat="book in books | orderBy:orderBy | filter:{genre:genre} | filter:{author:author} | filter:{publisher:publisher} | filter:{title:title}">
                 <div class="card">
                     <a href="#!/books/details/{{ book._id }}" ng-title="{{ book.title }}">
                         <img class="card-img-top" ng-src="{{ book.image_url }}" ng-alt="{{ book.title }}" />

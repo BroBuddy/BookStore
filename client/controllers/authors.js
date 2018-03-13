@@ -2,7 +2,7 @@ var myApp = angular.module('myApp');
 
 myApp.controller('AuthorsController', ['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams) {
     console.log('AuthorsController');
-    
+
     $scope.getAuthors = function () {
         $http.get('/api/authors')
         .then(function(response) {
@@ -31,7 +31,7 @@ myApp.controller('AuthorsController', ['$scope', '$http', '$location', '$routePa
 
         $http.put('/api/authors/' + id, $scope.author)
         .then(function() {
-            window.location.href = '#/authors';
+            window.location.href = '#!/authors';
         });
     };
 
@@ -41,7 +41,7 @@ myApp.controller('AuthorsController', ['$scope', '$http', '$location', '$routePa
             $('body').removeClass('modal-open');
             $('.modal-backdrop').remove();
 
-            window.location.href = '#/authors';
+            window.location.href = '#!/authors';
         });
     };
 }]);

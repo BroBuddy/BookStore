@@ -35,7 +35,9 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="Author">Author</label>
-                                <input type="text" class="form-control" id="Author" placeholder="Author" ng-model="book.author" required />
+                                <select id="Author" class="form-control" ng-model="book.author" ng-init="getAuthors()" required>
+                                        <option ng-repeat="author in authors | orderBy:'name'">{{ author.name }}</option>
+                                </select>
                             </div>
                         </div>
 
@@ -82,7 +84,7 @@
                                 <hr />
 
                                 <div class="btn-toolbar justify-content-between">
-                                    <a href="#/books" class="btn btn-outline-secondary">Back</a>
+                                    <a href="#!/books" class="btn btn-outline-secondary">Back</a>
                                     <button type="submit" class="btn btn-outline-primary">Update</button>
                                 </div>
                             </div>

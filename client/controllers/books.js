@@ -9,6 +9,13 @@ myApp.controller('BooksController', ['$scope', '$http', '$location', '$routePara
             $scope.genres = response.data;
         });
     };
+
+    $scope.getAuthors = function () {
+        $http.get('/api/authors')
+        .then(function(response) {
+            $scope.authors = response.data;
+        });
+    };
     
     $scope.getBooks = function () {
         $http.get('/api/books')
@@ -38,7 +45,7 @@ myApp.controller('BooksController', ['$scope', '$http', '$location', '$routePara
 
         $http.put('/api/books/' + id, $scope.book)
         .then(function() {
-            window.location.href = '#/books';
+            window.location.href = '#!/books';
         });
     };
 
@@ -48,7 +55,7 @@ myApp.controller('BooksController', ['$scope', '$http', '$location', '$routePara
             $('body').removeClass('modal-open');
             $('.modal-backdrop').remove();
 
-            window.location.href = '#/books';
+            window.location.href = '#!/books';
         });
     };
 }]);

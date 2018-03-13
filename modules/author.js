@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 // Author schema
-var authorSchema = mongoose.Schema({
+var schema = new Schema({
     name: {
         type: String,
         required: true
@@ -27,13 +28,16 @@ var authorSchema = mongoose.Schema({
     web_url: {
         type: String
     },
+    books: {
+        type: String
+    },
     create_date: {
         type: Date,
         default: Date.now
     }
 });
 
-var Author = module.exports = mongoose.model('Author', authorSchema);
+module.exports = mongoose.model('Author', schema);
 
 // Get authors
 module.exports.getAuthors = function(callback, limit) {
